@@ -1,0 +1,55 @@
+High-Level Architecture
+A Microservices-based Architecture
+1. Client Layer
+   Web browsers and mobile applications
+2. API Gateway
+  Act as a single entry point, handling request routing, authentication, rate limitting, and loading balancing.
+3. Microservice Layer
+  Various independent services such as User-service, serach-servicen messaging-service, payment-service.
+4. Data Layer
+  Databases, Caching System, and Search Engines.
+5. Infrastrure Layer
+  Cloud services, container orchestration (eg, Kubernetes) CI/CD pipelines
+6. Auxiliary Services
+  Logging, monitoring, notification systems.
+
+  +------------------+
+|   Client Layer   |
+| (Web/Mobile App) |
++--------+---------+
+         |
+         v
++--------+---------+
+|   API Gateway    |
++--------+---------+
+         |
++--------+---------+       +--------+---------+       +--------+---------+
+|  User Service    | <---> | Search Service   | <---> | Messaging Service |
++------------------+       +-------------------+       +-------------------+
+         |
+         v
++--------+---------+
+|   Payment Service|
++------------------+
+
++--------+---------+
+|  Data Layer      |
+| - Databases      |
+| - Caching         |
+| - Search Engine  |
++------------------+
+
++--------+---------+
+| Infrastructure    |
+| - Kubernetes      |
+| - CI/CD Pipelines |
+| - Cloud Services  |
++------------------+
+
++--------+---------+
+| Auxiliary Services|
+| - Logging         |
+| - Monitoring      |
+| - Notification    |
++------------------+
+
