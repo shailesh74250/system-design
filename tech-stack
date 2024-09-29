@@ -1,0 +1,40 @@
+Technology Stack
+FE
+- Web: Reactjs, Augular, or Vue.js for building dynamic user interface.
+- Mobile: React native or Flutter for cross-platform mobile application
+BE
+- Programming Language: Node.js with typescript for asynchronous handling and type safety.
+- Framework: Express.js or NestJs for building robust APIs.
+
+DB
+- Relational Database: PostgreSQL or MySQL for structured data. (if application have payment module then we should go for relational db because it support ACID property)
+- NoSQL database: MongoDB or Cassendra for high-write throughput and scalability.
+- Search Engine: Elasticsearch for advanced search capabilities.
+
+
+Caching
+- In-Memory Cache: Redis or Memcached for low-latency data access.
+- CDN: Cloudflare, Akamai, or Amazon Cloudfront for content delivery.
+
+Messaging and Queues
+- Message Broker: Apache Kafka, RabbitMQ, or Amazon SQS for handling asynchronous tasks and inter-service communication.
+
+Containerization and Orchestration
+- Containers: Docker for packaging services
+- Orchestration: Kubernetes for managing containerized applications at scale.
+
+Monitoring and Logging
+- Monitoring: Prometheus, Grafana, Datadog, or New Relic.
+- Logging: ELK stack (Elasticsearch, Logstash, Kibana), Fluentd, or Splunk
+- Distributed Tracing: Jaeer or Zipkin
+
+Security
+- Authentication: OAuth 2.0, OpenID Connet.
+- SSL/TLS certificate: Let's Encrypt or commercial providers for secure data transmission
+- WAF: Web application firewall services like AWS WAF or Cloudflare WAF.
+
+DevOps and CI/CD
+- CI/CD Tools: Jenkins, GitHub Actions, GitLab CI/CD, or Travis, CircleCI
+- Infrastructure as code: Terraform or AWS CloudFormation for managing infrastructure.
+
+
