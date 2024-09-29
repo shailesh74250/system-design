@@ -1,0 +1,54 @@
+Ensuring the system can handle billions of active users daily necessitates robust scalability and performance optimization strategies.
+
+4.1. Load Balancing
+Responsibilities:
+
+Distribute incoming traffic evenly across multiple servers to prevent any single server from becoming a bottleneck.
+Technologies:
+
+Hardware Load Balancers: F5 Networks, Citrix ADC.
+Software Load Balancers: NGINX, HAProxy.
+Cloud Load Balancers: AWS Elastic Load Balancing (ELB), Google Cloud Load Balancing, Azure Load Balancer.
+Key Considerations:
+
+Health Checks: Regularly monitor the health of backend services and route traffic only to healthy instances.
+SSL Termination: Offload SSL processing to the load balancer to reduce load on backend services.
+Global Load Balancing: Use DNS-based load balancing for distributing traffic across different geographical regions.
+4.2. Autoscaling
+Responsibilities:
+
+Dynamically adjust the number of active servers based on traffic load to maintain performance and cost-efficiency.
+Technologies:
+
+Container Orchestration: Kubernetes Horizontal Pod Autoscaler, AWS ECS with Auto Scaling.
+Cloud Provider Autoscaling: AWS Auto Scaling Groups, Google Cloud Autoscaler, Azure Autoscale.
+Key Considerations:
+
+Scaling Policies: Define thresholds for CPU usage, memory usage, or custom metrics to trigger scaling events.
+Cooldown Periods: Prevent rapid scaling up and down by setting appropriate cooldown periods.
+Stateless Services: Design services to be stateless to facilitate seamless scaling.
+4.3. Data Partitioning and Sharding
+Responsibilities:
+
+Distribute data across multiple databases or partitions to balance load and ensure high availability.
+Strategies:
+
+Horizontal Partitioning (Sharding): Split data based on key attributes (e.g., user ID ranges, geographical regions).
+Vertical Partitioning: Separate different types of data into distinct databases (e.g., user profiles vs. messaging data).
+Key Considerations:
+
+Shard Key Selection: Choose shard keys that ensure even data distribution and prevent hotspots.
+Rebalancing: Implement mechanisms to rebalance shards as data volume grows.
+Consistency Management: Handle cross-shard transactions carefully to maintain data consistency.
+4.4. Content Delivery Network (CDN)
+Responsibilities:
+
+Serve static and dynamic content from edge servers closest to users to reduce latency and improve load times.
+Technologies:
+
+CDNs: Cloudflare, Akamai, Amazon CloudFront, Fastly.
+Key Considerations:
+
+Cache Invalidation: Implement strategies for updating or invalidating cached content when it changes.
+Edge Computing: Utilize CDN edge functions for processing requests closer to the user.
+Geographical Distribution: Deploy CDN nodes in strategic locations to cover target user bases effectively.
