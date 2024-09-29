@@ -1,0 +1,32 @@
+5. Data Flow
+Understanding the data flow through the system helps in identifying potential bottlenecks and ensuring data integrity.
+
+Example Workflow: User Registration
+
+Client Request: User submits the registration form via the frontend application.
+API Gateway: Receives the request, performs initial validation, authentication (if applicable), and routes it to the User Service.
+User Service: Processes the registration by:
+Validating input data.
+Checking for existing users.
+Creating a new user record in the User Database.
+Search Service: Indexes the new user profile in the Search Engine for future search queries.
+Notification Service: Sends a welcome email or SMS to the user.
+Response: The User Service sends a success response back through the API Gateway to the client.
+Logging and Monitoring: All actions are logged, and relevant metrics are updated in real-time dashboards.
+
+  Client (Web/Mobile)
+       |
+       v
+   API Gateway
+       |
+       v
+   User Service <--> User Database
+       |
+       v
+   Search Service <--> Search Engine
+       |
+       v
+ Notification Service <--> Email/SMS Provider
+       |
+       v
+    Response
