@@ -1,0 +1,1 @@
+Control which domains can interact with your API by configuring CORS policies using the cors middleware.
