@@ -1,0 +1,21 @@
+Categorize errors to respond appropriately:
+
+Client Errors (4xx): Issues with the request (e.g., validation errors, unauthorized access).
+Server Errors (5xx): Issues on the server side (e.g., database failures, unhandled exceptions).
+
+Avoiding Exposure of Sensitive Information
+
+Ensure that error responses do not leak sensitive details about the server or application.
+
+Generic Messages for Server Errors:
+
+// src/middlewares/errorHandler.ts
+function errorHandler(err: any, req: Request, res: Response, next: NextFunction) {
+    logger.error(err);
+
+    if (err instanceof CustomError) {
+        res.status(err.status).json({ message: err.message });
+    } else {
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+}
