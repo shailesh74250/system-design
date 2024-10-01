@@ -1,0 +1,11 @@
+Transactions: When performing multiple related operations, use transactions to ensure atomicity.
+
+import { getManager } from 'typeorm';
+
+await getManager().transaction(async transactionalEntityManager => {
+    // Multiple operations
+    await transactionalEntityManager.save(user);
+    await transactionalEntityManager.save(profile);
+});
+
+Error Handling in Transactions: Catch and handle errors within transactions to rollback changes appropriately.
