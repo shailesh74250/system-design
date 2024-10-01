@@ -20,3 +20,5 @@ try {
         // Handle other errors
     }
 }
+
+// Global Error Handling: Implement middleware or global handlers to catch and process TypeORM errors consistently across your application.
