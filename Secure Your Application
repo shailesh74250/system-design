@@ -1,0 +1,10 @@
+Input Sanitization: Prevent injection attacks by sanitizing and validating all user inputs.
+
+Helmet: Use the Helmet middleware to secure HTTP headers.
+
+npm install helmet
+
+
+// src/index.ts
+import helmet from 'helmet';
+app.use(helmet());
