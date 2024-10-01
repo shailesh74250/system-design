@@ -1,0 +1,1 @@
+Implement robust authentication (e.g., JWT, OAuth) and enforce authorization checks to ensure users access only permitted resources.
