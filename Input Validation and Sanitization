@@ -1,0 +1,1 @@
+Prevent injection attacks by validating and sanitizing all user inputs using libraries like Joi or express-validator.
