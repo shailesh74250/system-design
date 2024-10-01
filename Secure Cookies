@@ -1,0 +1,10 @@
+Ensure cookies are set with the HttpOnly and Secure flags to prevent client-side scripts from accessing them and ensure they're transmitted only over HTTPS.
+
+app.use(
+  session({
+    secret: 'your-secret',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { httpOnly: true, secure: true },
+  })
+);
