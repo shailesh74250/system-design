@@ -1,0 +1,1 @@
+Protect against brute-force attacks and denial-of-service (DoS) by limiting the number of requests a user can make in a given timeframe using middleware like express-rate-limit.
