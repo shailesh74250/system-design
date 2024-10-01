@@ -1,1 +1,10 @@
 Control which domains can interact with your API by configuring CORS policies using the cors middleware.
+
+const cors = require('cors');
+
+app.use(
+  cors({
+    origin: 'https://yourdomain.com',
+    optionsSuccessStatus: 200,
+  })
+);
