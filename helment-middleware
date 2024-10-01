@@ -1,0 +1,4 @@
+1. What is Helmet.js?
+Helmet.js is a collection of middleware functions that set various HTTP headers to help protect your Express.js applications from well-known web vulnerabilities.
+  It doesn’t provide complete security but serves as a solid foundation for securing HTTP headers, which is a critical aspect of web application security.
+  
