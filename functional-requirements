@@ -1,0 +1,33 @@
+System Requirements
+Functional vs Non-Functional
+
+Functional Requirements
+- User Management 
+Registration, Login, and profile management
+Authentication and authorization
+Friend or contact list management
+- Messaging
+One-to-one and group messaging
+Real-time message delivery
+Message history retrieval
+Media sharing (Image, Videos, files)
+- Notification
+Push notification for new messages
+In-app notifications for user activities
+- Presence Indicators
+Online/offline status for users
+Typing indicators
+- Search Functionality
+- User Settings
+Privacy settings
+Notification preferences
+
+
+Non-Functional Requirements
+1. Scalability
+2. High Availability
+3. Performance 
+4. Reliability
+5. Security
+6. Maintainability
+7. Cost Efficiency
