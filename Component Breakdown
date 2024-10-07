@@ -1,0 +1,21 @@
+Client Applications:
+
+Users interact with the chat service through web or mobile clients.
+Utilize WebSockets for real-time communication.
+Chat Server:
+
+Handles incoming and outgoing messages.
+Publishes messages to Kafka and consumes messages for delivery.
+Apache Kafka Cluster:
+
+Serves as a distributed messaging system.
+Ensures reliable and scalable message brokering.
+Redis:
+
+Manages user presence (online/offline status).
+Caches frequently accessed data for quick retrieval.
+Kafka Consumers:
+
+Dedicated services that consume messages from Kafka topics.
+Responsible for delivering messages to intended recipients.
+  
