@@ -1,0 +1,1 @@
+Mismanagement of state, such as holding large amounts of data in state or improper use of state management libraries, can lead to performance issues.
