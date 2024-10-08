@@ -1,0 +1,1 @@
+Components that re-render unnecessarily can degrade performance, especially in large applications with many components.
