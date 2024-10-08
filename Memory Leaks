@@ -1,0 +1,1 @@
+Components that fail to clean up subscriptions or timers can cause memory leaks, leading to increased memory consumption over time.
