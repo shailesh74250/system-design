@@ -1,0 +1,1 @@
+Poorly designed components, such as those with heavy computation in the render cycle or deeply nested components, can slow down the application.
