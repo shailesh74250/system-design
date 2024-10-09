@@ -1,0 +1,93 @@
+Optimizing Component Rendering
+Avoid Unnecessary Re-renders:
+Use React.memo for functional components to prevent re-renders when props haven’t changed.
+Implement shouldComponentUpdate in class components.
+Flatten Component Hierarchy: Reduce deep nesting of components to simplify rendering.
+Optimize Lists:
+Use proper key props.
+Implement virtualization for large lists using libraries like react-window or react-virtualized.
+
+
+
+Efficient State Management
+Local vs. Global State: Keep state as local as possible to minimize re-renders across the application.
+Use State Management Libraries Wisely: Tools like Redux or MobX are powerful but can introduce complexity. Ensure they're used appropriately.
+Immutable Data Structures: Maintain immutability to allow React to efficiently detect changes.
+
+
+
+
+Code Splitting and Lazy Loading
+const SomeComponent = React.lazy(() => import('./SomeComponent'));
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SomeComponent />
+    </Suspense>
+  );
+}
+
+Route-Based Splitting: Split code based on routes to ensure that users only load the code necessary for their current view.
+
+
+Memoization Techniques
+useMemo Hook: Memoize expensive calculations within components
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+useCallback Hook: Memoize callback functions to prevent unnecessary re-creations
+const memoizedCallback = useCallback(() => {
+  doSomething(a, b);
+}, [a, b]);
+
+
+
+Optimizing Assets and Media
+Image Optimization:
+Use appropriate formats (e.g., WebP).
+Compress images without significant quality loss.
+Implement responsive images using srcset.
+
+Lazy Loading Images: Load images only when they enter the viewport
+<img src="image.jpg" loading="lazy" alt="Description" />
+
+Minimize and Compress Assets: Use tools like imagemin and ensure assets are minified.
+
+
+Virtualization for Large Lists
+Implement Virtualized Lists: Render only the visible portion of a large list to reduce DOM nodes and improve performance.
+import { FixedSizeList as List } from 'react-window';
+
+const Row = ({ index, style }) => (
+  <div style={style}>Row {index}</div>
+);
+
+function App() {
+  return (
+    <List
+      height={500}
+      itemCount={1000}
+      itemSize={35}
+      width={300}
+    >
+      {Row}
+    </List>
+  );
+}
+
+
+
+
+
+Best Practices to Prevent Future Bottlenecks
+Component Design:
+Build small, reusable components.
+Keep components focused on a single responsibility.
+Performance Budgets:
+Set and monitor performance budgets to prevent excessive resource usage.
+Continuous Profiling:
+Regularly profile your application, especially after adding new features.
+Optimized Dependencies:
+Regularly audit and optimize third-party libraries.
+Server-Side Rendering (SSR):
+Implement SSR to improve initial load times and SEO.
+Efficient Caching Strategies:
+Use caching to reduce redundant data fetching and computations.
