@@ -1,0 +1,49 @@
+what are the native api can't work on web?
+
+Some native APIs in React Native are designed specifically for mobile devices and will not function or are challenging to replicate in a web environment. 
+Here’s a list of some commonly used APIs and features in React Native that may not work or have limited functionality on the web:
+
+Camera and Media APIs
+
+Camera: Direct access to the device camera (like react-native-camera or expo-camera) typically won’t work out of the box on the web due to differences in how browsers handle media.
+Media Library: APIs for accessing and managing the user’s media library are not standardized for the web, and each browser has different access limitations for security.
+
+
+Geolocation and Location Services
+Background Location Tracking: Mobile apps allow background location tracking for continuous updates, which the web doesn’t support as fully or consistently. Browser-based location tracking often requires user consent per session.
+Geofencing: Geofencing APIs commonly found in mobile aren’t supported directly on the web.
+
+Push Notifications and Local Notifications
+Push Notifications: React Native uses native APIs for push notifications, while the web has its own Web Push API, which requires different setups. Libraries like react-native-push-notification don’t work on web.
+Local Notifications: Mobile-specific libraries for scheduling local notifications (like react-native-notifications) won’t have full support on the web without using different approaches, such as the Notifications API in supported browsers.
+
+
+Bluetooth and NFC
+Bluetooth Access: Direct interaction with Bluetooth devices isn’t available on the web; although there is a Web Bluetooth API, it is limited and not universally supported.
+NFC (Near Field Communication): NFC functionality is native to mobile devices and generally not available on the web.
+
+Background Tasks and Services
+Background Processing: Running background tasks (like downloading files in the background or tracking) is native to mobile and not available on the web. Browsers do not support background tasks in the same way.
+Task Manager: The ability to run continuous background tasks, especially for activities like data synchronization, is limited on the web.
+
+File System Access
+File System Access: Native file system APIs like react-native-fs allow full read/write access on the device’s file system, which web browsers restrict. The web’s file handling is usually confined to browser-controlled sandboxed areas.
+
+Native Modules and Device-Specific Features
+Haptic Feedback: Mobile apps can trigger haptic feedback (vibration) for better UX, while this is limited on the web.
+Biometric Authentication: Fingerprint and Face ID are often accessed through native APIs in mobile apps; while some browsers support WebAuthn, it’s not fully compatible or universal.
+
+Contacts and Call/SMS APIs
+Contacts Access: Accessing the user’s contact list is available on mobile but not on the web due to privacy and security restrictions.
+Phone Call and SMS APIs: Directly dialing or sending SMS from the app requires native permissions on mobile and is generally not possible from a web app.
+
+
+Workarounds and Alternatives
+Many of these limitations can be partially addressed by using web-specific APIs or libraries. For example:
+
+Geolocation: Use the HTML5 Geolocation API, though it’s subject to browser limitations.
+Notifications: The Web Push API and Notifications API offer similar capabilities with additional setup.
+Camera Access: The MediaDevices API (navigator.mediaDevices.getUserMedia) can provide camera access within the browser, but with different user consent flows and limitations.
+
+The functionality of mobile-focused native modules can often be replicated on the web, but may require additional configuration or a shift in approach due to differences in the underlying platforms.
+
