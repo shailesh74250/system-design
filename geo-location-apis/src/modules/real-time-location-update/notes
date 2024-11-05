@@ -1,0 +1,3 @@
+Objective: Track and display real-time movement (e.g., tracking the progress of a booked vehicle or showing the user’s location on a map).
+API Used: Real-time location APIs, combined with WebSockets for continuous updates.
+Example: Uber shows the real-time position of the driver as they approach the pickup point.

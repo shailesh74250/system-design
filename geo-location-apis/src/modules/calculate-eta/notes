@@ -1,0 +1,3 @@
+Objective: Provide users with an accurate ETA and distance from their current location to their destination.
+API Used: Distance Matrix API (like Google’s Distance Matrix API).
+Example: Ridesharing apps calculate the travel time based on real-time traffic data to provide ETAs for rides.

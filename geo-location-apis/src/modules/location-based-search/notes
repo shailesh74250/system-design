@@ -1,0 +1,3 @@
+Objective: Filter search results by proximity to the user or a specified location (e.g., hotels within 10 km of a particular city).
+API Used: Backend location-based querying or services like Elasticsearch with geo-queries.
+Example: Booking.com allows users to search for hotels near a landmark or within a specific city area.

@@ -1,0 +1,3 @@
+Objective: Map out routes between two points (like from a user's current location to their destination).
+API Used: Google Maps Directions API, Mapbox, or Here API.
+Example: Uber calculates the optimal route between the pickup and drop-off points for cost estimation and navigation.
