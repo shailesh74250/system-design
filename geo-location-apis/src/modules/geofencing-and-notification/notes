@@ -1,0 +1,3 @@
+Objective: Trigger notifications or actions when a user enters or exits a predefined area.
+API Used: Geofencing APIs like those available in Google Maps for Android, or Apple’s Core Location framework for iOS.
+Example: When a user is close to a popular attraction, the app can recommend nearby activities or accommodations.
