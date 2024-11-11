@@ -1,3 +1,0 @@
-Objective: Show an interactive map with pins for different locations (e.g., available rentals or nearby attractions).
-API Used: Google Maps API, Mapbox, or Leaflet.js for web.
-Example: Airbnb’s map view shows available properties within a certain area, allowing users to see exact locations.

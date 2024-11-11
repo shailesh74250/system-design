@@ -1,6 +1,5 @@
 // Import Express
 const express = require('express');
-const nearPlacesRoutes = require('./modules/near-by-places/route');
 
 // Initialize the app
 const app = express();
@@ -15,8 +14,6 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
-
-app.use('/near-places', nearPlacesRoutes);
 
 // Start the server
 app.listen(PORT, () => {

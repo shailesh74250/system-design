@@ -1,3 +1,0 @@
-Objective: When a user opens the app, the geolocation API is used to detect their current location.
-API Used: Browser Geolocation API (for web apps) or device-specific APIs (like Android’s Fused Location Provider).
-Example: Uber uses the current location to show nearby drivers and calculate the estimated time of arrival (ETA).
