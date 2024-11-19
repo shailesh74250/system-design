@@ -1,3 +1,8 @@
 Objective: When a user opens the app, the geolocation API is used to detect their current location.
 API Used: Browser Geolocation API (for web apps) or device-specific APIs (like Android’s Fused Location Provider).
 Example: Uber uses the current location to show nearby drivers and calculate the estimated time of arrival (ETA).
+
+We can use navigator object in js to find out correct coordinates
+Geolocation API
+Note: Geolocation is most accurate for devices with GPS, like smartphones.
+Note: As of Chrome 50, the Geolocation API will only work on secure contexts such as HTTPS. If your site is hosted on an non-secure origin (such as HTTP) the requests to get the users location will no longer function.
