@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.cjs.json",
+  "include": [
+    "./src/cjs.ts",
+    "./src/div2k/x2/cjs.ts",
+    "./src/div2k/x3/cjs.ts",
+    "./src/div2k/x4/cjs.ts",
+    "./src/psnr-small/cjs.ts",
+    "./src/gans/cjs.ts"
+  ]
+}

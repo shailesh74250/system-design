@@ -1,0 +1,23 @@
+{
+  "name": "@upscalerjs/demo.esrgan-legacy",
+  "private": true,
+  "version": "1.0.0-beta.12",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9"
+  },
+  "author": "Kevin Scott",
+  "license": "MIT",
+  "dependencies": {
+    "@tensorflow/tfjs": "~4.11.0",
+    "@upscalerjs/esrgan-legacy": "latest",
+    "seedrandom": "^3.0.5",
+    "upscaler": "latest"
+  },
+  "engines": {
+    "npm": ">8.0.0"
+  }
+}

@@ -1,0 +1,126 @@
+---
+title: Default Model
+description: Overview of @upscalerjs/default-model model
+sidebar_position: 5
+sidebar_label: default-model
+enhanced_src: default-model/samples/2x/result.png
+category: upscaling
+---
+
+import ModelHeaderImage from '@site/src/components/modelHeaderImage/modelHeaderImage';
+import Badges from '@site/src/components/badges/badges';
+
+<ModelHeaderImage packageName="default-model" unenhancedSrc="default-model/fixture.png" enhancedSrc="default-model/samples/2x/result.png" />
+
+# Default Model
+
+<Badges packageName="default-model" />
+
+This model is the default upscaling model used with UpscalerJS. It is a copy of the 2x model made available via [@upscalerjs/esrgan-slim](esrgan-slim).
+
+## Paper
+
+> The Super-Resolution Generative Adversarial Network (SRGAN) is a seminal work that is capable of generating realistic textures during single image super-resolution. However, the hallucinated details are often accompanied with unpleasant artifacts. To further enhance the visual quality, we thoroughly study three key components of SRGAN - network architecture, adversarial loss and perceptual loss, and improve each of them to derive an Enhanced SRGAN (ESRGAN). In particular, we introduce the Residual-in-Residual Dense Block (RRDB) without batch normalization as the basic network building unit. Moreover, we borrow the idea from relativistic GAN to let the discriminator predict relative realness instead of the absolute value. Finally, we improve the perceptual loss by using the features before activation, which could provide stronger supervision for brightness consistency and texture recovery. Benefiting from these improvements, the proposed ESRGAN achieves consistently better visual quality with more realistic and natural textures than SRGAN and won the first place in the PIRM2018-SR Challenge.
+
+&mdash; [ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks](https://arxiv.org/abs/1809.00219)
+
+## Samples
+
+Here are some examples of upscaled images using this model.
+
+import SampleTable from '@site/src/components/sampleTable/sampleTable';
+
+<SampleTable
+  packageName="esrgan-thick"
+  models={[
+    '2x'
+  ]}
+  scales={[
+    2,
+  ]}
+/>
+
+## Demo
+
+import ModelExample from '@site/src/components/modelExample/modelExample';
+
+<ModelExample model="default-model" />
+
+## Usage
+
+`@upscalerjs/default-model` comes pre-installed with `upscaler`. It is the default model when no `model` is provided:
+
+```
+import UpscalerJS from 'upscaler';
+const upscaler = new UpscalerJS(); // Using the default-model
+```
+
+So in most cases, it does not need to be explicitly required. If for some reason an explicit require is needed, read on.
+
+### Browser
+
+#### Using a transpiler
+
+`default-model` can be provided explicitly:
+
+```
+import UpscalerJS from 'upscaler';
+import model from '@upscalerjs/default-model';
+
+const upscaler = new UpscalerJS({
+  model,
+})
+```
+
+#### Using a script tag
+
+If loading UpscalerJS via a script tag, reference the global name of the model:
+
+```
+<script src="https://cdn.jsdelivr.net/npm/@upscalerjs/default-model@latest/dist/umd/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/upscaler@latest/dist/browser/umd/upscaler.min.js"></script>
+
+<script type="text/javascript">
+  const upscaler = new Upscaler({
+    model: DefaultUpscalerJSModel,
+  })
+</script>
+```
+
+### Node
+
+Require the model with:
+
+```
+const Upscaler = require('upscaler/node'); // if using @tensorflow/tfjs-node-gpu, change this to upscaler/node-gpu
+const defaultModel = require('@upscalerjs/default-model');
+
+const upscaler = new Upscaler({
+  model: defaultModel,
+})
+```
+
+The model will work for both `node` and `node-gpu` flavors of Tensorflow.js.
+
+## Performance + Speed Measurements
+
+import PerformanceChart from '@site/src/components/chart/performanceChart/performanceChart';
+import SpeedChart from '@site/src/components/chart/speedChart/speedChart';
+
+<PerformanceChart package="default-model" databasePath="/assets/performance.sql"></PerformanceChart>
+
+<SpeedChart package="default-model" databasePath="/assets/speed.sql"></SpeedChart>
+
+## Architecture
+
+This model is trained via a [Python implementation of the ESRGAN architecture](https://github.com/idealo/image-super-resolution).  The Python repo has instructions on training from scratch.
+
+## Training Details
+
+View more information on training at [`@upscalerjs/esrgan-slim`](esrgan-slim#training-details).
+
+## License
+
+[MIT License](https://oss.ninja/mit/developit/) © [Kevin Scott](https://thekevinscott.com)
+
+The original ESRGAN repository is licensed under an [Apache License 2.0](https://github.com/idealo/image-super-resolution/blob/master/LICENSE)

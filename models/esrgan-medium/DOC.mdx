@@ -1,0 +1,194 @@
+---
+title: ESRGAN Medium
+description: Overview of @upscalerjs/esrgan-medium model
+sidebar_position: 2
+sidebar_label: esrgan-medium
+hide_title: true
+enhanced_src: esrgan-medium/samples/4x/result.png
+category: upscaling
+---
+
+import ModelHeaderImage from '@site/src/components/modelHeaderImage/modelHeaderImage';
+import Badges from '@site/src/components/badges/badges';
+
+<ModelHeaderImage packageName="esrgan-medium" unenhancedSrc="esrgan-medium/fixture.png" enhancedSrc="esrgan-medium/samples/4x/result.png" />
+
+# ESRGAN Medium
+
+<Badges packageName="esrgan-medium" />
+
+These models strike a balance between latency and image quality. They aim to be in the middle of speed and performance measurements between [`@upscalerjs/esrgan-slim`](esrgan-slim) and [`@upscalerjs/esrgan-thick`](esrgan-thick).
+
+The model weights were trained using the [`image-super-resolution` Python repo](https://github.com/idealo/image-super-resolution) and subsequently converted to Tensorflow.js models.
+
+## Paper
+
+> The Super-Resolution Generative Adversarial Network (SRGAN) is a seminal work that is capable of generating realistic textures during single image super-resolution. However, the hallucinated details are often accompanied with unpleasant artifacts. To further enhance the visual quality, we thoroughly study three key components of SRGAN - network architecture, adversarial loss and perceptual loss, and improve each of them to derive an Enhanced SRGAN (ESRGAN). In particular, we introduce the Residual-in-Residual Dense Block (RRDB) without batch normalization as the basic network building unit. Moreover, we borrow the idea from relativistic GAN to let the discriminator predict relative realness instead of the absolute value. Finally, we improve the perceptual loss by using the features before activation, which could provide stronger supervision for brightness consistency and texture recovery. Benefiting from these improvements, the proposed ESRGAN achieves consistently better visual quality with more realistic and natural textures than SRGAN and won the first place in the PIRM2018-SR Challenge.
+
+&mdash; [ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks](https://arxiv.org/abs/1809.00219)
+
+## Samples
+
+Here are some examples of upscaled images using these models.
+
+import SampleTable from '@site/src/components/sampleTable/sampleTable';
+
+<SampleTable
+  packageName="esrgan-medium"
+  models={[
+    '2x',
+    '3x',
+    '4x',
+  ]}
+  scales={[
+    2,
+    3,
+    4,
+  ]}
+/>
+
+## Demo
+
+import ModelExample from '@site/src/components/modelExample/modelExample';
+
+<ModelExample model="esrgan-medium" />
+
+
+## Installation
+
+```
+npm install @upscalerjs/esrgan-medium
+```
+
+## Usage
+
+### Browser
+
+#### Using a transpiler
+
+If using a transpiler (such as `tsc`, `webpack`, or `vite`) import the model with:
+
+```
+import Upscaler from 'upscaler';
+import x2 from '@upscalerjs/esrgan-medium/2x';
+
+const upscaler = new Upscaler({
+  model: x2,
+})
+```
+
+#### Using a script tag
+
+If importing Tensorflow.js using script tags, import the specific model and UpscalerJS with:
+
+```
+<script src="https://cdn.jsdelivr.net/npm/@upscalerjs/esrgan-medium@latest/dist/umd/2x.min.js"></script> <!-- loads the 2x model -->
+<script src="https://cdn.jsdelivr.net/npm/upscaler@latest/dist/browser/umd/upscaler.min.js"></script>
+
+<script type="text/javascript">
+  const upscaler = new Upscaler({
+    model: ESRGANMedium2x,
+  })
+</script>
+```
+
+The model will be made available on the global window object. See [Available Models](#available-models) for information on referencing by name.
+
+You can also import all models in this package via the `index.min.js` import:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@upscalerjs/esrgan-medium@latest/dist/umd/index.min.js"></script>
+```
+
+If so, all model configurations will be available on the global object `ESRGANMedium`.
+
+### Node
+
+Require the model with:
+
+```
+const Upscaler = require('upscaler/node'); // if using @tensorflow/tfjs-node-gpu, change this to upscaler/node-gpu
+const x2 = require('@upscalerjs/esrgan-medium/2x');
+
+const upscaler = new Upscaler({
+  model: x2,
+})
+```
+
+The model will work for both `node` and `node-gpu` flavors of Tensorflow.js.
+
+## Available Models
+
+ESRGAN Medium ships with four models corresponding to the desired scale of the upscaled image:
+
+- 2x: `@upscalerjs/esrgan-medium/2x`
+- 3x: `@upscalerjs/esrgan-medium/3x`
+- 4x: `@upscalerjs/esrgan-medium/4x`
+- 8x: `@upscalerjs/esrgan-medium/8x` (_note: the 8x model runs only in Node_)
+
+All models are also exported via the root export:
+
+```
+import Upscaler from 'upscaler';
+import models from '@upscalerjs/esrgan-medium';
+
+const upscaler = new Upscaler({
+  model: models.x2,
+  // model: models.x3,
+  // model: models.x4,
+  // model: models.x8,
+})
+```
+
+If referencing the models via script tags, refer to the models by their global names:
+
+- `2x`: `ESRGANMedium2x`
+- `3x`: `ESRGANMedium3x`
+- `4x`: `ESRGANMedium4x`
+- `8x`: `ESRGANMedium8x`
+
+Specific model files can be loaded by specifying the scale:
+
+```
+<script src="https://cdn.jsdelivr.net/npm/@upscalerjs/esrgan-medium@latest/dist/umd/2x.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@upscalerjs/esrgan-medium@latest/dist/umd/3x.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@upscalerjs/esrgan-medium@latest/dist/umd/4x.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@upscalerjs/esrgan-medium@latest/dist/umd/8x.min.js"></script>
+```
+
+## Performance + Speed Measurements
+
+import PerformanceChart from '@site/src/components/chart/performanceChart/performanceChart';
+import SpeedChart from '@site/src/components/chart/speedChart/speedChart';
+
+<PerformanceChart package="esrgan-medium" databasePath="/assets/performance.sql"></PerformanceChart>
+
+<SpeedChart package="esrgan-medium" databasePath="/assets/speed.sql"></SpeedChart>
+
+
+
+## Architecture
+
+This model is trained via a [Python implementation of the ESRGAN architecture](https://github.com/idealo/image-super-resolution).  The Python repo has instructions on training from scratch.
+
+## Training Details
+
+The model is trained on 4 scales.
+
+The model is trained on the [Div2k dataset](https://data.vision.ee.ethz.ch/cvl/DIV2K/).
+
+It was trained for 500 epochs, with the following hyperparameters:
+
+- **architecture**: `rdn`
+- **C**: `1`
+- **D**: `10`
+- **G**: `64`
+- **G0**: `64`
+
+The batch size was 12, and the batches per epoch was 20. The learning rate was set to `0.0004`. The HR patch size was set to `128` or `129` depending on the scale (ensuring it is divisible by the scale) with the LR patch size being the resultant scale `HR_patch_size / scale`.
+
+## License
+
+[MIT License](https://oss.ninja/mit/developit/) © [Kevin Scott](https://thekevinscott.com)
+
+The original ESRGAN repository is licensed under an [Apache License 2.0](https://github.com/idealo/image-super-resolution/blob/master/LICENSE)

@@ -1,0 +1,9 @@
+assets
+src
+yarn-error.log
+node_modules
+test
+demo
+DOC.mdx
+doc-snippets
+.gitattributes
