@@ -1,0 +1,20 @@
+{
+  "name": "system-design",
+  "version": "1.0.0",
+  "description": "https://deep-image.ai/app/tools/auto-enhance\r - Documentation: https://documentation.deep-image.ai/",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.8",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
