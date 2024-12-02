@@ -1,4 +1,0 @@
-- `2x`: `ESRGANMedium2x`
-- `3x`: `ESRGANMedium3x`
-- `4x`: `ESRGANMedium4x`
-- `8x`: `ESRGANMedium8x`

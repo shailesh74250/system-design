@@ -1,2 +1,0 @@
-- `@upscalerjs/maxim-denoising/64` - quantized `uint8`, input size of 64
-- `@upscalerjs/maxim-denoising/256` - quantized `uint8`, input size of 256

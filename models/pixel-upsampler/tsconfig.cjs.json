@@ -1,9 +1,0 @@
-{
-  "extends": "../tsconfig.cjs.json",
-  "include": [
-    "./src/cjs.ts",
-    "./src/x2/cjs.ts",
-    "./src/x3/cjs.ts",
-    "./src/x4/cjs.ts"
-  ]
-}

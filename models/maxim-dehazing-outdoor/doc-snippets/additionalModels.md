@@ -1,2 +1,0 @@
-- `@upscalerjs/maxim-dehazing-outdoor/64` - quantized `uint8`, input size of 64
-- `@upscalerjs/maxim-dehazing-outdoor/256` - quantized `uint16`, input size of 256
