@@ -1,5 +1,6 @@
 // Import Express
 const express = require('express');
+const imageRoutes = require('./route');
 
 // Initialize the app
 const app = express();
@@ -14,6 +15,8 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
+
+app.use('/image', imageRoutes);
 
 // Start the server
 app.listen(PORT, () => {
