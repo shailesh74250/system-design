@@ -1,21 +1,21 @@
-// Import Express
-const express = require('express');
+const express = require("express");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
-// Initialize the app
+dotenv.config();
 const app = express();
 
-// Define the port
-const PORT = 3000;
-
-// Middleware to parse JSON bodies
+// Middleware
 app.use(express.json());
 
-// A simple route
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
+// Connect to MongoDB
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("Connected to MongoDB"))
+    .catch((err) => console.error("Error connecting to MongoDB:", err));
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+// Routes
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/upload", require("./routes/upload"));
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
