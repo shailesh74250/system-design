@@ -5,9 +5,8 @@ function App() {
 
   return (
     <>
-      <h1><center>Book a Meeting</center></h1>
+      <h2><center>Schedule a Meeting</center></h2>
       <ScheduleMeeting />
-      <h2><center>Your Scheduled Events</center></h2>
       <EventList />
     </>
   )

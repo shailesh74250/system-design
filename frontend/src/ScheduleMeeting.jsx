@@ -3,7 +3,7 @@ import { InlineWidget } from 'react-calendly';
 
 const ScheduleMeeting = () => {
   return (
-    <div style={{ height: '600px', width: '800px', marginLeft: '40%' }}>
+    <div style={{ height: '600px', width: '800px', margin: 'auto' }}>
       <InlineWidget
         url="https://calendly.com/shaileshmourya1995"
         styles={{ height: '100%', width: '100%' }}

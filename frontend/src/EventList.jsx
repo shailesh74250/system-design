@@ -12,7 +12,8 @@ const EventList = () => {
 
   return (
     <div>
-      <h2>Scheduled Events</h2>
+      <h2><center>Scheduled Events</center></h2>
+      <p><center>List of scheduled events - Only allowed in subscription service</center></p>
       <ul>
         {events.map((event) => (
           <li key={event.uri}>
