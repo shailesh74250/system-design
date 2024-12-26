@@ -53,10 +53,11 @@ async function authenticate(){
 
     // get user info
     const userInfoResults = await dsApi.getUserInfo(accessToken);
-
+      console.log('user info results', userInfoResults);
     // use the default account
     let userInfo = userInfoResults.accounts.find(account =>
       account.isDefault === 'true');
+    
 
     return {
       accessToken: results.body.access_token,

@@ -1,0 +1,21 @@
+1. create app on development account (add app and integration key)
+2. create generate integration key 
+3. generate RSA keys (public private key and upload public key in app itself) (save in local file)
+4. update redirect URLs
+5. copy user id, private key, application id
+6. update all three in config file
+7. start application 
+8. it will ask for grant the permission (open URL in browser and authenticate application)
+
+
+- code 
+1. authenticate application (private key, dsJWTClientId, impersonatedUserGuid, scope) used for authentication process
+2. get arguments (account id, access token, base path)
+3. create envelope and send envelope 
+   make envelope using three files converting into base64 (binary format)
+   adding three base64 files to envelope object
+   adding sign tabs to the signer files
+   adding carbon copy received user to env 
+   adding status (sent or fail)
+   return envelope object to sendEvelope method with details
+
