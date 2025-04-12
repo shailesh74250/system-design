@@ -1,1 +1,13 @@
-# system-design
+# Streaming Application
+- Netflix
+- YT
+- Disney 
+- Hotstar
+- SonyLiv
+- Voot
+- Amamzon Prime
+- Tencent Video
+- Paramount
+- Hulu
+- HBO Max
+- 
