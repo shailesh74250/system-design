@@ -28,3 +28,5 @@ if (cluster.isMaster) {
     console.log(`Worker ${process.pid} is listening on port ${PORT}`);
   });
 }
+// This works but it's manual and you have to manage worker lifecycle yourself.
+//  PM2 (recommended for production)
